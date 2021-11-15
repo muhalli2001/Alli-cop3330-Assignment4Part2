@@ -41,7 +41,6 @@
    <DatePicker fx:id="pick_date" layoutX="1085.0" layoutY="591.0" />
    <Button fx:id="addtask" layoutX="1133.0" layoutY="516.0" mnemonicParsing="false" onAction="#AddTaskToList" text="Add New Task" />
    <TextField fx:id="DescriptionEA" layoutX="1084.0" layoutY="646.0" prefHeight="100.0" prefWidth="200.0" promptText="Write New Task Description" />
-   <Button fx:id="display_item" layoutX="1152.0" layoutY="151.0" mnemonicParsing="false" text="Display" />
    <CheckBox fx:id="checkbox" layoutX="1171.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#ChangeCompletion" text="Completed" textFill="WHITE" />
    <HBox alignment="TOP_CENTER" layoutX="1008.0" layoutY="850.0" prefHeight="100.0" prefWidth="314.0">
       <children>
@@ -61,7 +60,7 @@
    <ListView fx:id="task_listview" layoutX="551.0" layoutY="213.0" onMouseClicked="#DisplayListViewIndex" prefHeight="606.0" prefWidth="200.0" />
    <Label layoutX="106.0" layoutY="638.0" text="Message Center:" textFill="WHITE" />
    <Label layoutX="93.0" layoutY="682.0" text="No Current Messages" textFill="WHITE" />
-   <Label fx:id="Index" layoutX="1093.0" layoutY="155.0" text="Index" textFill="WHITE" />
+   <Label fx:id="Index" layoutX="1150.0" layoutY="154.0" text="Index" textFill="WHITE" />
    <Label fx:id="ToDoTitle" alignment="CENTER" layoutX="62.0" layoutY="369.0" prefHeight="133.0" prefWidth="200.0" text="Set Me!" textFill="WHITE">
       <font>
          <Font size="47.0" />
