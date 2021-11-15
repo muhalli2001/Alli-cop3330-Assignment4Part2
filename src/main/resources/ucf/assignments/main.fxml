@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1002.0" prefWidth="1393.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.Controller">
+   <HBox layoutX="20.0" layoutY="9.0" prefHeight="25.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="ChangeToDoName" mnemonicParsing="false" onAction="#Change_ToDoList_Name" text="ChangeNameOfToDoList" />
+      </children></HBox>
+   <Label layoutX="133.0" layoutY="305.0" text="ToDo List Name:" textFill="WHITE" />
+   <Label layoutX="551.0" layoutY="109.0" prefHeight="44.0" prefWidth="251.0" text="To Do List Application" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="615.0" layoutY="163.0" prefHeight="17.0" prefWidth="149.0" text="ToDo Items" textFill="WHITE" />
+   <Label layoutX="1088.0" layoutY="200.0" text="Item Due Date:" textFill="WHITE" />
+   <Label layoutX="1123.0" layoutY="262.0" text="Item Description:" textFill="WHITE" />
+   <HBox layoutX="512.0" layoutY="9.0" prefHeight="25.0" prefWidth="436.0">
+      <children>
+         <HBox prefHeight="25.0" prefWidth="269.0">
+            <children>
+               <Button fx:id="Import" mnemonicParsing="false" onAction="#Open_List_FromExternal" text="Import External" />
+               <Button fx:id="Export" mnemonicParsing="false" onAction="#SaveList_ToExternal" text="Export Current" />
+            </children>
+         </HBox>
+         <Button fx:id="clear" mnemonicParsing="false" onAction="#Clear_List" prefHeight="25.0" prefWidth="125.0" text="Clear Tasks" />
+      </children>
+   </HBox>
+   <Label layoutX="1090.0" layoutY="123.0" text="Click an item to see the index" textFill="WHITE" />
+   <Button fx:id="ChangeDate" layoutX="1128.0" layoutY="411.0" mnemonicParsing="false" onAction="#EditDate" text="Change Item Date" />
+   <Button fx:id="EditDescription" layoutX="1107.0" layoutY="460.0" mnemonicParsing="false" onAction="#EditDescription" text="Change Item Descripton" />
+   <DatePicker fx:id="pick_date" layoutX="1085.0" layoutY="591.0" />
+   <Button fx:id="addtask" layoutX="1133.0" layoutY="516.0" mnemonicParsing="false" onAction="#AddTaskToList" text="Add New Task" />
+   <TextField fx:id="DescriptionEA" layoutX="1084.0" layoutY="646.0" prefHeight="100.0" prefWidth="200.0" promptText="Write New Task Description" />
+   <Button fx:id="display_item" layoutX="1152.0" layoutY="151.0" mnemonicParsing="false" text="Display" />
+   <CheckBox fx:id="checkbox" layoutX="1171.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#ChangeCompletion" text="Completed" textFill="WHITE" />
+   <HBox alignment="TOP_CENTER" layoutX="1008.0" layoutY="850.0" prefHeight="100.0" prefWidth="314.0">
+      <children>
+         <Button fx:id="disp_allitems" mnemonicParsing="false" onAction="#DisplayAllTasks" text="All Items" />
+         <Button mnemonicParsing="false" onAction="#DisplayCompleteTasks" text="Complete Items" />
+         <Button mnemonicParsing="false" onAction="#DisplayIncompleteTasks" text="Incomplete Items" />
+      </children>
+   </HBox>
+   <Label layoutX="1117.0" layoutY="792.0" text="Item Display Options" textFill="WHITE" />
+   <Label layoutX="1084.0" layoutY="227.0" text="Completed?" textFill="WHITE" />
+   <Label fx:id="Date_fromlist" layoutX="1184.0" layoutY="200.0" prefHeight="17.0" prefWidth="86.0" text="YYYY-MM-DD" textFill="RED" />
+   <HBox layoutX="1035.0" layoutY="9.0" prefHeight="100.0" prefWidth="261.0" />
+   <Label fx:id="List_ItemDescription" layoutX="1104.0" layoutY="305.0" text="Displays Description Here" textFill="RED" />
+   <Button fx:id="DeleteTask" layoutX="1131.0" layoutY="761.0" mnemonicParsing="false" onAction="#DeleteTaskFromList" text="Remove task" />
+   <Label layoutX="20.0" layoutY="50.0" text="Name of New ToDo List:" textFill="WHITE" />
+   <TextField fx:id="NameOfToDoList" layoutX="162.0" layoutY="46.0" prefHeight="25.0" prefWidth="190.0" promptText="Change Name of To Do List" />
+   <ListView fx:id="task_listview" layoutX="551.0" layoutY="213.0" onMouseClicked="#DisplayListViewIndex" prefHeight="606.0" prefWidth="200.0" />
+   <Label layoutX="106.0" layoutY="638.0" text="Message Center:" textFill="WHITE" />
+   <Label layoutX="93.0" layoutY="682.0" text="No Current Messages" textFill="WHITE" />
+   <Label fx:id="Index" layoutX="1093.0" layoutY="155.0" text="Index" textFill="WHITE" />
+   <Label fx:id="ToDoTitle" alignment="CENTER" layoutX="62.0" layoutY="369.0" prefHeight="133.0" prefWidth="200.0" text="Set Me!" textFill="WHITE">
+      <font>
+         <Font size="47.0" />
+      </font>
+   </Label>
+</AnchorPane>
