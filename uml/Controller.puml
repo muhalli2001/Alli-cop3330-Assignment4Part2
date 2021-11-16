@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+
+Controller <|- TaskLists
+TaskLists <|-- Task
+Controller <|-Task
+Main <|-Controller
+
+class Main{
+
+launch(args)
+start()
+
+}
+class Controller{
+AddTask()
+Removetask()
+Completetask()
+ChangeDate()
+ChangeDescription()
+DisplayTodoTaskList()
+DisplayAll()
+DisplayComplete()
+DisplayIncompleteTasks()
+EditDescription()
+EditDate()
+SaveList_ToExternal()
+Open_List_FromExternal()
+}
+
+class TaskLists{
+ArrayList<Task> TaskList
+String Title
+getTaskList()
+getTitle()
+AddToTaskList()
+RemoveFromTaskList()
+setTitle()
+}
+class Task{
+String duedate
+String Description
+boolean complete
+Task(Description,DueDate)
+getduedate()
+getDescription()
+setduedate()
+setDescription()
+
+}
+
+
+@enduml
