@@ -322,10 +322,16 @@ public class Controller implements Initializable {
 
         System.out.println("pressed");
         File text = new File("src/main/java/ucf/assignments/ExternalStorage.txt");
+        Scanner checkempty = new Scanner(text);
+
         String txt = "src/main/java/ucf/assignments/ExternalStorage.txt";
         FileWriter write = new FileWriter(txt);
-        write.write(tasklist.getTitle());
-        write.write("\n");
+        if(!checkempty.hasNextLine())
+        {
+            write.write(tasklist.getTitle());
+            write.write("\n");
+        }
+
         int val=0;
         while(tasklist.getTaskList().size()>val)
         {
@@ -358,6 +364,7 @@ public class Controller implements Initializable {
             Date_fromlist.setText("YYYY-MM-DD");
             List_ItemDescription.setText("Sample Description");
         }
+        checkempty.close();
 
     }
 
@@ -368,13 +375,19 @@ public class Controller implements Initializable {
         tasklist.getTaskList().clear();
 
         Scanner scan = new Scanner(text);
+
         tasklist.setTitle(scan.nextLine());
+
         ToDoTitle.setText(tasklist.getTitle());
+
+
+
+
         while(scan.hasNextLine())
         {
             String des= scan.nextLine();
             String due= scan.nextLine();
-            boolean comp = Boolean.parseBoolean(scan.nextLine());
+            boolean comp =  Boolean.parseBoolean(scan.nextLine());
             Task temp = new Task(des, due);
             temp.setComplete(comp);
             tasklist.getTaskList().add(temp);
@@ -388,6 +401,8 @@ public class Controller implements Initializable {
             Date_fromlist.setText("YYYY-MM-DD");
             List_ItemDescription.setText("Sample Description");
         }
+
+
 
     }
 
