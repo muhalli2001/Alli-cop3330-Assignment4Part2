@@ -81,11 +81,28 @@ class ControllerTest {
     @Test
     void displayAllTasks() {
 
+        Task test_task = new Task("doesn't matter", "doesn't matter");
+        tasklist_test.getTaskList().add(test_task);
+        tasklist_test_2 = tasklist_test;
+        System.out.println(tasklist_test_2);
+        assertEquals(tasklist_test, tasklist_test_2);
+
 
     }
 
     @Test
     void displayIncompleteTasks() {
+
+        Task test_task = new Task("doesn't matter", "doesn't matter");
+        tasklist_test.getTaskList().add(test_task);
+        tasklist_test.getTaskList().get(0).setComplete(true);
+
+        tasklist_test_2.getTaskList().addAll(tasklist_test.getTaskList());
+        tasklist_test_2.getTaskList().remove(0);
+
+
+        assertNotEquals(tasklist_test, tasklist_test_2);
+
     }
 
     @Test
